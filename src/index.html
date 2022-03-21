@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Photos</title>
+        <link rel="stylesheet" href="stylesheet.css">
+
+        <!-- api gateway generated sdk -->
+        <script src="./sdk/lib/axios/dist/axios.standalone.js"></script>
+        <script src="./sdk/lib/CryptoJS/rollups/hmac-sha256.js"></script>
+        <script src="./sdk/lib/CryptoJS/rollups/sha256.js"></script>
+        <script src="./sdk/lib/CryptoJS/components/hmac.js"></script>
+        <script src="./sdk/lib/CryptoJS/components/enc-base64.js"></script>
+        <script src="./sdk/lib/url-template/url-template.js"></script>
+        <script src="./sdk/lib/apiGatewayCore/sigV4Client.js"></script>
+        <script src="./sdk/lib/apiGatewayCore/apiGatewayClient.js"></script>
+        <script src="./sdk/lib/apiGatewayCore/simpleHttpClient.js"></script>
+        <script src="./sdk/lib/apiGatewayCore/utils.js"></script>
+
+        <script src="./sdk/apigClient.js"></script>
+        
+        <script src="script.js"></script>
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    </head>
+    <body>
+        <div class = "title">Photo Search</div>
+        <div class="text">
+            <input type="text" id="query" placeholder="search for photos">
+            <button onclick="searchPhotos()">search</button>
+            <button id="record" onclick="record()">record</button>
+        </div>
+        <div class="text">
+            <input type="file" id="inputFile" name="img" accept="image/*">
+            <input type="text" id="label" placeholder="labels seperated by ,">
+            <button onclick="uploadPhoto()">upload photos</button>
+        </div>
+        <div class="text" id="search_result">
+        </div>
+    </body>
+</html>
