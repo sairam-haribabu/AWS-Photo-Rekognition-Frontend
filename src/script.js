@@ -2,7 +2,9 @@ var sdk = apigClientFactory.newClient({});
 
 
 function searchPhotos() {
-    q = $("#query").val();
+    // q = $("#query").val();
+    q = document.getElementById('query').value
+    console.log(q);
     sdk.searchGet({'query':q}, {}, {}).then((response) => {
         console.log(response);
         var images = response.data.body;
@@ -56,14 +58,15 @@ function getBase64(file) {
 
 function uploadPhotos() {
     var image = document.getElementById('picture').files[0];
-    var label = $("#label").val()
+    // var label = $("#label").val()
+    var label=document.getElementById('label').value
     var params = {"item" : image.name, "bucket" : "ccbd-photos-bucket", "x-amz-meta-customLabels": label, "Content-Type": "image/jpeg"};
     var encoded_image = getBase64(image).then(
         data => {
         sdk.uploadBucketItemPut(params, data , {}).then(function(res){
            window.alert("Uploaded " + image.name);
-           $("#label").val("")
-           $("#picture").val("")
+        //    $("#label").val("")
+        //    $("#picture").val("")
             console.log(res)
         })
         .catch((error) => {
