@@ -2,12 +2,13 @@ version: 0.1
 phases:
   pre_build:
     commands:
-      - echo Installing source NM dependencies...
+      - echo Installing source NPM dependencies...
       - npm install
   build:
     commands:
-      - echo Build Started on `date`
+      - echo Build started on `date`
       - npm run build
 artifacts:
   files:
     - '**/*'
+  base-directory: build
