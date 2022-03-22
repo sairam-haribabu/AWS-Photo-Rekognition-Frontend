@@ -1,4 +1,19 @@
 {
-    "name": "ccbd-sai",
-    "version": "1.0.0"
+  "name": "ccbd-aws-photo-frontend",
+  "version": "1.0.0",
+  "description": "CCBD Hw2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sairam-haribabu/ccbd-aws-photo-frontend.git"
+  },
+  "author": "Sairam Haribabu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sairam-haribabu/ccbd-aws-photo-frontend/issues"
+  },
+  "homepage": "https://github.com/sairam-haribabu/ccbd-aws-photo-frontend#readme"
 }
