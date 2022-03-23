@@ -98,4 +98,5 @@ function uploadPhoto(){
     xhr.setRequestHeader("x-api-key", 'ZwEjIsMQNG18h2QXr2H3c3XIOVlwSmaT7jNyYCAA' );
     xhr.send(data);
     console.log("success")
+    window.alert("Uploaded " + data.name);
 }
