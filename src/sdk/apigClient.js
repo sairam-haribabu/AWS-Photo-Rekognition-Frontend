@@ -53,7 +53,7 @@ apigClientFactory.newClient = function (config) {
 
     
     // extract endpoint and path from url
-    var invokeUrl = 'https://n4dvgpnjd7.execute-api.us-east-1.amazonaws.com/gamma';
+    var invokeUrl = 'https://lwf6skoai1.execute-api.us-east-1.amazonaws.com/delta';
     var endpoint = /(^https?:\/\/[^\/]+)/g.exec(invokeUrl)[1];
     var pathComponent = invokeUrl.substring(endpoint.length);
 
@@ -122,12 +122,12 @@ apigClientFactory.newClient = function (config) {
     apigClient.uploadBucketItemPut = function (params, body, additionalParams) {
         if(additionalParams === undefined) { additionalParams = {}; }
         
-        apiGateway.core.utils.assertParametersDefined(params, ['item', 'bucket', 'Content-Type'], ['body']);
+        apiGateway.core.utils.assertParametersDefined(params, ['item', 'bucket', 'Content-Type', 'x-amz-meta-customlabel'], ['body']);
         
         var uploadBucketItemPutRequest = {
             verb: 'put'.toUpperCase(),
             path: pathComponent + uritemplate('/upload/{bucket}/{item}').expand(apiGateway.core.utils.parseParametersToObject(params, ['item', 'bucket', ])),
-            headers: apiGateway.core.utils.parseParametersToObject(params, ['Content-Type']),
+            headers: apiGateway.core.utils.parseParametersToObject(params, ['Content-Type', 'x-amz-meta-customlabel']),
             queryParams: apiGateway.core.utils.parseParametersToObject(params, []),
             body: body
         };

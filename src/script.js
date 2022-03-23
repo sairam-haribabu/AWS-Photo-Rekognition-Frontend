@@ -1,4 +1,4 @@
-var sdk = apigClientFactory.newClient({});
+var sdk = apigClientFactory.newClient({apiKey:'ZwEjIsMQNG18h2QXr2H3c3XIOVlwSmaT7jNyYCAA'});
 
 
 function searchPhotos() {
@@ -78,6 +78,8 @@ function uploadPhotos() {
 function uploadPhoto(){
 
     let data = document.getElementById('inputFile').files[0];
+    let labels = document.getElementById('labels').value;
+
     let xhr = new XMLHttpRequest();
     let bucketname="ccbd-photos-bucket";
     xhr.withCredentials = true;
@@ -87,9 +89,13 @@ function uploadPhoto(){
         }
     });
     xhr.withCredentials = false;
-    let urlcreate="https://n4dvgpnjd7.execute-api.us-east-1.amazonaws.com/gamma/upload/"+bucketname+"/"+data.name;
+    let urlcreate="https://lwf6skoai1.execute-api.us-east-1.amazonaws.com/delta/upload/"+bucketname+"/"+data.name;
+    //let urlcreate="https://n4dvgpnjd7.execute-api.us-east-1.amazonaws.com/gamma/upload/"+bucketname+"/"+data.name;
+
     xhr.open("PUT",urlcreate);
     xhr.setRequestHeader("Content-Type", data.type);
+    xhr.setRequestHeader("x-amz-meta-customlabel", labels );
+    xhr.setRequestHeader("x-api-key", 'ZwEjIsMQNG18h2QXr2H3c3XIOVlwSmaT7jNyYCAA' );
     xhr.send(data);
     console.log("success")
 }
