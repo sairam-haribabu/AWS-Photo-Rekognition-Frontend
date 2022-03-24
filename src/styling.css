@@ -1,0 +1,53 @@
+.search{
+    padding-bottom: 1em;
+    margin:20px;
+    padding:20px;
+    background-color: #3AAFA9;
+    border-radius: 5px;
+}
+.upload{
+    padding-bottom: 1em;
+    margin:20px;
+    padding:10px;
+    padding-top: 10px;
+    background-color: #3AAFA9;
+    border-radius: 5px;
+
+}
+.title{
+    font-size: xx-large;
+    text-align: center;
+    font-weight: bold;
+    background-color: #3AAFA9;
+    margin:20px;
+    padding:20px;
+    border-radius: 5px;
+}
+.bgclass{
+    background-color: #cbeeec;
+    font-family: sans-serif;
+}
+.subtitle{
+    font-size: medium;
+    margin:20px;
+    font-weight: lighter;
+    color:rgb(92, 92, 92)
+}
+.searchbutton{
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: #2B7A78;
+    padding:5px;
+}
+.labelbox{
+    width:200px;
+}
+.results{
+    margin:20px;
+}
+.thumbnail{
+    padding:20px;
+    border-radius: 20px;
+    background-color: #2B7A78;
+    margin:10px;
+}

@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Photos</title>
-        <link rel="stylesheet" href="stylesheet.css">
+        <link rel="stylesheet" href="styling.css">
 
         <!-- api gateway generated sdk -->
         <script src="./sdk/lib/axios/dist/axios.standalone.js"></script>
@@ -19,23 +19,39 @@
         <script src="./sdk/apigClient.js"></script>
         
         <script src="script.js"></script>
-<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     </head>
-    <body>
-        <div class = "title">AWS - Photo Search</div>
-        <div class="text">
-            <input type="text" id="query" placeholder="search for photos">
-            <button onclick="searchPhotos()">search</button>
-            <button id="record" onclick="record()">record</button>
+    <body class="bgclass"> 
+        <div class = "title">Photo Search
+            <div class = "subtitle">Use this site to upload and search for images!</div>
         </div>
-        <div class="text">
+
+        <div class="search">
+            <div>
+                <br>
+                Search for photos here
+            </div>
+            <br>
+            <input type="text" id="query" placeholder="Search for photos here">
+            <button onclick="searchPhotos()" class="searchbutton">Search</button>
+            <button id="record" onclick="record()" class="searchbutton">Record</button>
+        </div>
+
+        <div class="results" id="resultsID">
+        </div>
+
+        <div class="upload">
+            <div>
+                <br>
+                Upload your photos here
+            </div>
+            <br>
             <input type="file" id="inputFile" name="img" accept="image/*">
-            <input type="text" id="labels" placeholder="labels seperated by ,">
-            <button onclick="uploadPhoto()">upload photos</button>
-        </div>
-        <div class="text" id="search_result">
+            <br><br>
+            <input type="text" id="labels" placeholder="Enter comma seperated labels" class ="labelbox">
+            <button onclick="uploadPhoto()" class="searchbutton">Upload</button>
         </div>
     </body>
 </html>
